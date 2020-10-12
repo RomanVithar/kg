@@ -3,7 +3,7 @@ package vsu.cg.tasks.engine.assets.simple_objects;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-import vsu.cg.tasks.engine.assets.SimpleDrawObject;
+import vsu.cg.tasks.engine.services.SimpleDrawObject;
 
 public class Ship extends SimpleDrawObject {
     public Ship(double x,double y, double width, double height) {

@@ -1,6 +1,6 @@
 package vsu.cg.tasks.engine.assets.backgrounds;
 
-import vsu.cg.tasks.engine.assets.SimpleDrawObject;
+import vsu.cg.tasks.engine.services.SimpleDrawObject;
 import vsu.cg.tasks.engine.assets.simple_objects.Sky;
 import vsu.cg.tasks.engine.assets.simple_objects.Water;
 

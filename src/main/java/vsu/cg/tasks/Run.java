@@ -12,7 +12,7 @@ import vsu.cg.tasks.task1.Task1;
 
 public class Run {
 
-//    public static void main(String[] args) {
+    //    public static void main(String[] args) {
 //        Application.launch(args);
 //    }
 //
@@ -34,9 +34,9 @@ public class Run {
 //        primaryStage.setHeight(300);
 //        primaryStage.show();
 //    }
-public static void main(String[] args) {
-    System.out.println("hello world");
-}
+    public static void main(String[] args) {
+        System.out.println("hello world");
+    }
 }
 
 

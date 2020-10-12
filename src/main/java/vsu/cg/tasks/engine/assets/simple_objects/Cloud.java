@@ -2,7 +2,7 @@ package vsu.cg.tasks.engine.assets.simple_objects;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import vsu.cg.tasks.engine.assets.SimpleDrawObject;
+import vsu.cg.tasks.engine.services.SimpleDrawObject;
 
 import java.util.ArrayList;
 
