@@ -11,6 +11,7 @@ public class Line extends SimpleDrawObject implements LineDrawer{
     protected double y1;
     protected double y2;
     protected GraphicsContext gContext;
+    protected final int PXSIZE = 1;
 
     public Line(double x1, double y1, double x2, double y2) {
         this.x1 = x1;
@@ -61,5 +62,8 @@ public class Line extends SimpleDrawObject implements LineDrawer{
     @Override
     public void drawLine() {
 
+    }
+    protected void drawPixel(double x, double y){
+        gContext.fillRect(x,y,PXSIZE,PXSIZE);
     }
 }

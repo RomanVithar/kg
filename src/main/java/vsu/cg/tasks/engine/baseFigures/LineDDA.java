@@ -3,7 +3,6 @@ package vsu.cg.tasks.engine.baseFigures;
 import javafx.scene.paint.Color;
 
 public class LineDDA extends Line {
-    private final int PXSIZE = 5;
 
     public LineDDA(double x1, double y1, double x2, double y2) {
         super(x1, y1, x2, y2);
@@ -21,7 +20,7 @@ public class LineDDA extends Line {
         double y = Math.round(y1);
 
         for(int i=0;i<countStep;i++){
-            gContext.fillRect(Math.round(x),Math.round(y),PXSIZE,PXSIZE);
+            drawPixel(Math.round(x),Math.round(y));
             x+=dx;
             y+=dy;
         }
