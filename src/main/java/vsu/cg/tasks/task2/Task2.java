@@ -9,6 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import vsu.cg.tasks.engine.baseFigures.Line;
 import vsu.cg.tasks.engine.baseFigures.LineBresenham;
+import vsu.cg.tasks.engine.baseFigures.LineDDA;
 
 
 public class Task2 extends Application {
@@ -17,9 +18,9 @@ public class Task2 extends Application {
     @Override
     public void start(Stage primaryStage) {
         Group root = new Group();
-        Scene scene = new Scene(root, 1500, 900, Color.BLACK);
+        Scene scene = new Scene(root, 1000, 900, Color.BLACK);
 
-        Line line = new LineBresenham(x1, y1, x2, y2);
+        Line line = new LineDDA(x1, y1, x2, y2);
         line.drawLine();
         line.putOnGroup(root);
 

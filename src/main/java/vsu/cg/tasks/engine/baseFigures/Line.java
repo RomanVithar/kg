@@ -18,7 +18,7 @@ public class Line extends SimpleDrawObject implements LineDrawer{
         this.x2 = x2;
         this.y1 = y1;
         this.y2 = y2;
-        Canvas canvas = new Canvas(10000,10000);
+        Canvas canvas = new Canvas(1000,1000);
         gContext = canvas.getGraphicsContext2D();
         holst.getChildren().addAll(canvas);
     }

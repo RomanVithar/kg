@@ -11,18 +11,27 @@ public class LineDDA extends Line {
     @Override
     public void drawLine() {
         gContext.setFill(Color.RED);
-
-        int countStep = (int) Math.round(Math.max(x2 - x1, y2 - y1));
-        double dx = (x2-x1)/countStep;
-        double dy = (y2-y1)/countStep;
-
-        double x = Math.round(x1);
-        double y = Math.round(y1);
-
-        for(int i=0;i<countStep;i++){
-            drawPixel(Math.round(x),Math.round(y));
-            x+=dx;
-            y+=dy;
+        double xStart = Math.round(x1);
+        double yStart = Math.round(y1);
+        double xEnd = Math.round(x2);
+        double yEnd = Math.round(y2);
+        int L = (int) (Math.max(( Math.abs(xEnd - xStart)), Math.abs(yEnd - yStart))) + 1;
+        if(y2<y1) {
+            double x = x2;
+            double y = y2;
+            for (int i = 0; i < L; i++) {
+                drawPixel(x, y);
+                x -= (xEnd - xStart) / L;
+                y -= (yEnd - yStart) / L;
+            }
+        }else{
+            double x = x1;
+            double y = y1;
+            for (int i = 0; i < L; i++) {
+                drawPixel(x, y);
+                x += (xEnd - xStart) / L;
+                y += (yEnd - yStart) / L;
+            }
         }
     }
 }
