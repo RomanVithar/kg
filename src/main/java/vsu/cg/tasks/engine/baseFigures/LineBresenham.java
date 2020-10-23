@@ -10,11 +10,6 @@ public class LineBresenham extends Line {
 
     @Override
     public void drawLine() {
-        gContext.setFill(Color.RED);
-        Color color = new Color(34,432,432,43);
-        /*
-        TODO выше смотри  для алгоритма ву показанно тут как яркость поменять
-         */
         int deltax, deltay, error, deltaerr, y, x, diry, dirx;
         deltax = (int) Math.abs(x2 - x1);
         deltay = (int) Math.abs(y2 - y1);
@@ -32,12 +27,12 @@ public class LineBresenham extends Line {
             y = (int) y1;
             diry = (int) (y2 - y1);
             if (diry > 0) {
-                diry = 1;
+                diry = PXSIZE;
             }
             if (diry < 0) {
-                diry = -1;
+                diry = -PXSIZE;
             }
-            for (double x0 = x1; x0 < x2; x0++) {
+            for (double x0 = x1; x0 < x2; x0+=PXSIZE) {
                 drawPixel(x0, y);
                 error = error + deltaerr;
                 if (error >= (deltax + 1)) {
@@ -50,13 +45,13 @@ public class LineBresenham extends Line {
             x = (int) x1;
             dirx = (int) (x2 - x1);
             if (dirx > 0) {
-                dirx = 1;
+                dirx = PXSIZE;
             }
             if (dirx < 0) {
-                dirx = -1;
+                dirx = -PXSIZE;
             }
             if(y2<y1){
-                for (double y0 = y1; y0 > y2; y0--) {
+                for (double y0 = y1; y0 > y2; y0-=PXSIZE) {
                     drawPixel(x, y0);
                     error = error + deltaerr;
                     if (error >= (deltay + 1)) {
@@ -65,7 +60,7 @@ public class LineBresenham extends Line {
                     }
                 }
             }else {
-                for (double y0 = y1; y0 < y2; y0++) {
+                for (double y0 = y1; y0 < y2; y0+=PXSIZE) {
                     drawPixel(x, y0);
                     error = error + deltaerr;
                     if (error >= (deltay + 1)) {

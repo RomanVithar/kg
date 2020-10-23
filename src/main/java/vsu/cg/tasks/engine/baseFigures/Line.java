@@ -2,6 +2,7 @@ package vsu.cg.tasks.engine.baseFigures;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 import vsu.cg.tasks.engine.interfaces.LineDrawer;
 import vsu.cg.tasks.engine.services.SimpleDrawObject;
 
@@ -12,6 +13,7 @@ public class Line extends SimpleDrawObject implements LineDrawer{
     protected double y2;
     protected GraphicsContext gContext;
     protected final int PXSIZE = 1;
+    protected Color color;
 
     public Line(double x1, double y1, double x2, double y2) {
         this.x1 = x1;
@@ -21,6 +23,8 @@ public class Line extends SimpleDrawObject implements LineDrawer{
         Canvas canvas = new Canvas(1000,1000);
         gContext = canvas.getGraphicsContext2D();
         holst.getChildren().addAll(canvas);
+        gContext.setFill(Color.RED);
+        color = Color.RED;
     }
 
     public Line(){
@@ -65,5 +69,28 @@ public class Line extends SimpleDrawObject implements LineDrawer{
     }
     protected void drawPixel(double x, double y){
         gContext.fillRect(x,y,PXSIZE,PXSIZE);
+    }
+
+    protected void drawPixel(double x, double y, double c){
+        setIntensity(c);
+        gContext.fillRect(x,y,PXSIZE,PXSIZE);
+        setIntensity(1);
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+        gContext.setFill(this.color);
+    }
+
+    protected void setIntensity(double k) {
+        try {
+            gContext.setFill(new Color(color.getRed(),
+                    color.getGreen(),
+                    color.getBlue(),
+                    color.getOpacity()*k));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }

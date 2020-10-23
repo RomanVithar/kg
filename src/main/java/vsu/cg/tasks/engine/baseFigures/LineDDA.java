@@ -10,7 +10,6 @@ public class LineDDA extends Line {
 
     @Override
     public void drawLine() {
-        gContext.setFill(Color.RED);
         double xStart = Math.round(x1);
         double yStart = Math.round(y1);
         double xEnd = Math.round(x2);
@@ -19,7 +18,7 @@ public class LineDDA extends Line {
         if(y2<y1) {
             double x = x2;
             double y = y2;
-            for (int i = 0; i < L; i++) {
+            for (int i = 0; i < L; i+=1) {
                 drawPixel(x, y);
                 x -= (xEnd - xStart) / L;
                 y -= (yEnd - yStart) / L;
@@ -27,7 +26,7 @@ public class LineDDA extends Line {
         }else{
             double x = x1;
             double y = y1;
-            for (int i = 0; i < L; i++) {
+            for (int i = 0; i < L; i+=1) {
                 drawPixel(x, y);
                 x += (xEnd - xStart) / L;
                 y += (yEnd - yStart) / L;

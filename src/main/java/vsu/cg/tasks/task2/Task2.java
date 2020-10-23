@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import vsu.cg.tasks.engine.baseFigures.Line;
 import vsu.cg.tasks.engine.baseFigures.LineBresenham;
 import vsu.cg.tasks.engine.baseFigures.LineDDA;
+import vsu.cg.tasks.engine.baseFigures.LineWu;
 
 
 public class Task2 extends Application {
@@ -20,7 +21,8 @@ public class Task2 extends Application {
         Group root = new Group();
         Scene scene = new Scene(root, 1000, 900, Color.BLACK);
 
-        Line line = new LineDDA(x1, y1, x2, y2);
+        Line line = new LineWu(x1, y1, x2, y2);
+
         line.drawLine();
         line.putOnGroup(root);
 
@@ -31,10 +33,6 @@ public class Task2 extends Application {
         scene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                /*
-                TODO: Сделать нормальный алгоритм чтобы рисовал в любом направлении
-                      Сделать норм рисование, первая точка произвольная остальные ломанные
-                 */
                 line.setY1(y2);
                 line.setX1(x2);
                 x2 = mouseEvent.getX();
