@@ -1,22 +1,10 @@
-package vsu.cg.tasks.engine.baseFigures.ellipse;
+package vsu.cg.tasks.engine.baseFigures.ellipse.ellipse_extends;
 
-import vsu.cg.tasks.engine.baseFigures.Shape;
+import vsu.cg.tasks.engine.baseFigures.ellipse.Ellipse;
 
-public class Ellipse extends Shape implements EllipseDrawer {
-    protected double x1;
-    protected double y1;
-    protected double a;
-    protected double b;
-
-    public Ellipse() {
-        this(0, 0, 0, 0);
-    }
-
-    public Ellipse(double x1, double y1, double a, double b) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.a = a;
-        this.b = b;
+public class EllipseBresenham extends Ellipse {
+    public EllipseBresenham(double x1, double y1, double a, double b) {
+        super(x1, y1, a, b);
     }
 
     @Override
@@ -55,37 +43,5 @@ public class Ellipse extends Shape implements EllipseDrawer {
                 x++;
             }
         }
-    }
-
-    public double getX1() {
-        return x1;
-    }
-
-    public void setX1(double x1) {
-        this.x1 = x1;
-    }
-
-    public double getY1() {
-        return y1;
-    }
-
-    public void setY1(double y1) {
-        this.y1 = y1;
-    }
-
-    public double getA() {
-        return a;
-    }
-
-    public void setA(double a) {
-        this.a = a;
-    }
-
-    public double getB() {
-        return b;
-    }
-
-    public void setB(double b) {
-        this.b = b;
     }
 }

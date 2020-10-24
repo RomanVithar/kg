@@ -19,6 +19,7 @@ public class CircleBresenham extends Circle {
             drawPixel(x1 + x, y1 - y);
             drawPixel(x1 - x, y1 + y);
             drawPixel(x1 - x, y1 - y);
+
             error = 2 * (delta + y) - 1;
             if ((delta < 0) && (error <= 0)){
                 delta += 2 * ++x + 1;

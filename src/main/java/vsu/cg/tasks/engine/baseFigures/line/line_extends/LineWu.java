@@ -21,11 +21,11 @@ public class LineWu extends Line {
                 y2 = y1;
                 y1 = mem;
             }
-            gradient =dy / dx * PXSIZE;
+            gradient =dy / dx * PX_SIZE;
             intery = y1 + gradient;
-            for (double x = x1; x < x2; x += PXSIZE) {
+            for (double x = x1; x < x2; x += PX_SIZE) {
                 drawPixel(x, (int) intery, 1 - (intery % 1));
-                drawPixel(x, (int) (intery) + PXSIZE, (intery % 1));
+                drawPixel(x, (int) (intery) + PX_SIZE, (intery % 1));
                 intery += gradient;
             }
         } else {
@@ -37,11 +37,11 @@ public class LineWu extends Line {
                 y2 = y1;
                 y1 = mem;
             }
-            gradient = dx / dy * PXSIZE;
+            gradient = dx / dy * PX_SIZE;
             intery = x1 + gradient;
-            for (double y = y1; y < y2; y += PXSIZE) {
+            for (double y = y1; y < y2; y += PX_SIZE) {
                 drawPixel((int) intery, y, 1 - (intery % 1));
-                drawPixel((int) (intery) + PXSIZE, y, (intery % 1));
+                drawPixel((int) (intery) + PX_SIZE, y, (intery % 1));
                 intery += gradient;
             }
         }

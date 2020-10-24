@@ -10,7 +10,7 @@ public class Shape implements DrawObject {
     protected Group holst;
     protected GraphicsContext gContext;
     protected Color color;
-    protected final int PXSIZE = 1;
+    protected final int PX_SIZE = 1;
 
     public Shape() {
         holst = new Group();
@@ -31,7 +31,7 @@ public class Shape implements DrawObject {
             gContext.setFill(new Color(color.getRed(),
                     color.getGreen(),
                     color.getBlue(),
-                    color.getOpacity() * k));
+                    color.getOpacity() * Math.abs(k)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,12 +42,12 @@ public class Shape implements DrawObject {
     }
 
     protected void drawPixel(double x, double y) {
-        gContext.fillRect(x, y, PXSIZE, PXSIZE);
+        gContext.fillRect(x, y, PX_SIZE, PX_SIZE);
     }
 
     protected void drawPixel(double x, double y, double c) {
         setIntensity(c);
-        gContext.fillRect(x, y, PXSIZE, PXSIZE);
+        gContext.fillRect(x, y, PX_SIZE, PX_SIZE);
         setIntensity(1);
     }
 }

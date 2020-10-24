@@ -38,12 +38,12 @@ public class Line extends Shape implements LineDrawer {
             y = (int) y1;
             diry = (int) (y2 - y1);
             if (diry > 0) {
-                diry = PXSIZE;
+                diry = PX_SIZE;
             }
             if (diry < 0) {
-                diry = -PXSIZE;
+                diry = -PX_SIZE;
             }
-            for (double x0 = x1; x0 < x2; x0+=PXSIZE) {
+            for (double x0 = x1; x0 < x2; x0+= PX_SIZE) {
                 drawPixel(x0, y);
                 error = error + deltaerr;
                 if (error >= (deltax + 1)) {
@@ -56,13 +56,13 @@ public class Line extends Shape implements LineDrawer {
             x = (int) x1;
             dirx = (int) (x2 - x1);
             if (dirx > 0) {
-                dirx = PXSIZE;
+                dirx = PX_SIZE;
             }
             if (dirx < 0) {
-                dirx = -PXSIZE;
+                dirx = -PX_SIZE;
             }
             if(y2<y1){
-                for (double y0 = y1; y0 > y2; y0-=PXSIZE) {
+                for (double y0 = y1; y0 > y2; y0-= PX_SIZE) {
                     drawPixel(x, y0);
                     error = error + deltaerr;
                     if (error >= (deltay + 1)) {
@@ -71,7 +71,7 @@ public class Line extends Shape implements LineDrawer {
                     }
                 }
             }else {
-                for (double y0 = y1; y0 < y2; y0+=PXSIZE) {
+                for (double y0 = y1; y0 < y2; y0+= PX_SIZE) {
                     drawPixel(x, y0);
                     error = error + deltaerr;
                     if (error >= (deltay + 1)) {
