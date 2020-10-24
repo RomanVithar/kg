@@ -1,11 +1,22 @@
-package vsu.cg.tasks.engine.baseFigures;
+package vsu.cg.tasks.engine.baseFigures.line;
 
-import javafx.scene.paint.Color;
+import vsu.cg.tasks.engine.baseFigures.Shape;
 
-public class LineBresenham extends Line {
+public class Line extends Shape implements LineDrawer {
+    protected double x1;
+    protected double x2;
+    protected double y1;
+    protected double y2;
 
-    public LineBresenham(double x1, double y1, double x2, double y2) {
-        super(x1, y1, x2, y2);
+    public Line(double x1, double y1, double x2, double y2) {
+        this.x1 = x1;
+        this.x2 = x2;
+        this.y1 = y1;
+        this.y2 = y2;
+    }
+
+    public Line() {
+        this(0, 0, 0, 0);
     }
 
     @Override
@@ -70,5 +81,37 @@ public class LineBresenham extends Line {
                 }
             }
         }
+    }
+
+    public double getX1() {
+        return x1;
+    }
+
+    public void setX1(double x1) {
+        this.x1 = x1;
+    }
+
+    public double getX2() {
+        return x2;
+    }
+
+    public void setX2(double x2) {
+        this.x2 = x2;
+    }
+
+    public double getY1() {
+        return y1;
+    }
+
+    public void setY1(double y1) {
+        this.y1 = y1;
+    }
+
+    public double getY2() {
+        return y2;
+    }
+
+    public void setY2(double y2) {
+        this.y2 = y2;
     }
 }

@@ -3,9 +3,9 @@ package vsu.cg.tasks.engine.assets.simple_objects;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-import vsu.cg.tasks.engine.services.SimpleDrawObject;
+import vsu.cg.tasks.engine.baseFigures.Shape;
 
-public class Ship extends SimpleDrawObject {
+public class Ship extends Shape {
     public Ship(double x,double y, double width, double height) {
         Polygon body = new Polygon();
         body.getPoints().addAll(x+width/6,y,

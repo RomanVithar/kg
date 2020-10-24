@@ -1,4 +1,4 @@
-package vsu.cg.tasks.engine.interfaces;
+package vsu.cg.tasks.engine.baseFigures;
 
 import javafx.scene.Group;
 

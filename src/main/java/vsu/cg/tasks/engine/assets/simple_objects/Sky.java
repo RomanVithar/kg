@@ -2,12 +2,12 @@ package vsu.cg.tasks.engine.assets.simple_objects;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import vsu.cg.tasks.engine.services.SimpleDrawObject;
+import vsu.cg.tasks.engine.baseFigures.Shape;
 
-public class Sky extends SimpleDrawObject {
+public class Sky extends Shape {
     private Rectangle rectangle;
 
-    public Sky(int x, int y, int width, int height) {
+    public Sky(int x, int y, double width, double height) {
         rectangle = new Rectangle(x,y,width,height);
         rectangle.setFill(Color.GREY );
         holst.getChildren().addAll(rectangle);

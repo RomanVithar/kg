@@ -2,11 +2,11 @@ package vsu.cg.tasks.engine.assets.simple_objects;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import vsu.cg.tasks.engine.services.SimpleDrawObject;
+import vsu.cg.tasks.engine.baseFigures.Shape;
 
 import java.util.ArrayList;
 
-public class Cloud extends SimpleDrawObject {
+public class Cloud extends Shape {
 
     public Cloud(double centerX, double centerY, int size) {
         ArrayList<Circle> circles = new ArrayList<Circle>();

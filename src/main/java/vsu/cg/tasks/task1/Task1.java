@@ -9,16 +9,17 @@ import vsu.cg.tasks.engine.assets.backgrounds.SeaBack;
 import vsu.cg.tasks.engine.assets.simple_objects.Ship;
 import vsu.cg.tasks.engine.assets.simple_objects.Sky;
 import vsu.cg.tasks.engine.assets.simple_objects.Water;
+import vsu.cg.tasks.services.GlobalConstants;
 
 public class Task1 extends Application {
 
     @Override
     public void start(Stage primaryStage) {
         Group root = new Group();
-        Scene scene = new Scene(root, 1500, 900, Color.BLACK);
-        SeaBack seaBack = new SeaBack(0, 0, 1500, 900);
+        Scene scene = new Scene(root, GlobalConstants.SCREEN_WIDTH, GlobalConstants.SCREEN_HEIGHT, Color.BLACK);
+        SeaBack seaBack = new SeaBack(0, 0, GlobalConstants.SCREEN_WIDTH, GlobalConstants.SCREEN_HEIGHT);
         seaBack.putOnGroup(root);
-        Ship ship = new Ship(500, 600, 600, 350);
+        Ship ship = new Ship(200, 400, 400, 150);
         ship.putOnGroup(root);
         primaryStage.setTitle("task1");
         primaryStage.setScene(scene);

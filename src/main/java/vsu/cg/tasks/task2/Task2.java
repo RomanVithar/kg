@@ -7,23 +7,30 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import vsu.cg.tasks.engine.baseFigures.Line;
-import vsu.cg.tasks.engine.baseFigures.LineBresenham;
-import vsu.cg.tasks.engine.baseFigures.LineDDA;
-import vsu.cg.tasks.engine.baseFigures.LineWu;
+import vsu.cg.tasks.engine.baseFigures.circle.Circle;
+import vsu.cg.tasks.engine.baseFigures.circle.circle_extends.CircleBresenham;
+import vsu.cg.tasks.engine.baseFigures.line.Line;
+import vsu.cg.tasks.engine.baseFigures.line.line_extends.LineWu;
+import vsu.cg.tasks.services.GlobalConstants;
 
 
 public class Task2 extends Application {
-    double x1 =0, x2=0, y1=0, y2=0;
+    private double x2=0;
+    private double y2=0;
 
     @Override
     public void start(Stage primaryStage) {
         Group root = new Group();
-        Scene scene = new Scene(root, 1000, 900, Color.BLACK);
+        Scene scene = new Scene(root, GlobalConstants.SCREEN_WIDTH, GlobalConstants.SCREEN_HEIGHT, Color.BLACK);
 
-        Line line = new LineWu(x1, y1, x2, y2);
+        Line line = new LineWu(0, 0, x2, y2);
+        Circle circle = new CircleBresenham(GlobalConstants.SCREEN_WIDTH/2, GlobalConstants.SCREEN_HEIGHT/2,100);
 
+        circle.drawCircle();
         line.drawLine();
+        line.setColor(Color.ALICEBLUE);
+
+        circle.putOnGroup(root);
         line.putOnGroup(root);
 
         primaryStage.setTitle("task2");

@@ -1,6 +1,6 @@
-package vsu.cg.tasks.engine.baseFigures;
+package vsu.cg.tasks.engine.baseFigures.line.line_extends;
 
-import javafx.scene.paint.Color;
+import vsu.cg.tasks.engine.baseFigures.line.Line;
 
 public class LineDDA extends Line {
 

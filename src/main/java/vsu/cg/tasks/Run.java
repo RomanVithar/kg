@@ -1,16 +1,5 @@
 package vsu.cg.tasks;
 
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
-import javafx.stage.Stage;
-import vsu.cg.tasks.engine.baseFigures.Line;
-import vsu.cg.tasks.task1.Task1;
-
 public class Run {
 
     //    public static void main(String[] args) {
