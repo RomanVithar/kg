@@ -9,8 +9,12 @@ public class FillEllipse extends Ellipse {
 
     @Override
     public void drawEllipse() {
-       /*
-       TODO выучить это
-        */
+        for (double x = - a; x <=  a; x++) {
+            for (double y = - b; y <=  b; y++) {
+                if ((x / a)*(x / a) + (y / b)*(y / b) - 1 < 0.03) {
+                    drawPixel(x1+x, y1+y);
+                }
+            }
+        }
     }
 }
