@@ -1,8 +1,9 @@
 package vsu.cg.tasks.engine.baseFigures.line;
 
+import vsu.cg.tasks.engine.baseFigures.Drawer;
 import vsu.cg.tasks.engine.baseFigures.Shape;
 
-public class Line extends Shape implements LineDrawer {
+public class Line extends Shape implements Drawer {
     protected double x1;
     protected double x2;
     protected double y1;
@@ -20,7 +21,7 @@ public class Line extends Shape implements LineDrawer {
     }
 
     @Override
-    public void drawLine() {
+    public void draw() {
         int deltax, deltay, error, deltaerr, y, x, diry, dirx;
         deltax = (int) Math.abs(x2 - x1);
         deltay = (int) Math.abs(y2 - y1);

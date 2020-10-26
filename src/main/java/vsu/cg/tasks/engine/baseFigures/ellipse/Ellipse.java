@@ -1,8 +1,9 @@
 package vsu.cg.tasks.engine.baseFigures.ellipse;
 
+import vsu.cg.tasks.engine.baseFigures.Drawer;
 import vsu.cg.tasks.engine.baseFigures.Shape;
 
-public class Ellipse extends Shape implements EllipseDrawer {
+public class Ellipse extends Shape implements Drawer {
     protected double x1;
     protected double y1;
     protected double a;
@@ -19,8 +20,7 @@ public class Ellipse extends Shape implements EllipseDrawer {
         this.b = b;
     }
 
-    @Override
-    public void drawEllipse() {
+    public void draw() {
         int x = 0;
         int y = (int) b;
         int aSqr = (int) (a * a);

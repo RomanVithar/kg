@@ -9,7 +9,7 @@ public class LineBresenham extends Line {
     }
 
     @Override
-    public void drawLine() {
+    public void draw() {
         int deltax, deltay, error, deltaerr, y, x, diry, dirx;
         deltax = (int) Math.abs(x2 - x1);
         deltay = (int) Math.abs(y2 - y1);

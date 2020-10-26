@@ -7,16 +7,14 @@ import javafx.scene.paint.Color;
 import vsu.cg.tasks.services.GlobalConstants;
 
 public class Shape implements DrawObject {
-    protected Group holst;
-    protected GraphicsContext gContext;
-    protected Color color;
+    private GraphicsContext gContext;
+    private Color color;
+    private Canvas canvas;
     protected final int PX_SIZE = 1;
 
-    public Shape() {
-        holst = new Group();
-        Canvas canvas = new Canvas(GlobalConstants.SCREEN_WIDTH, GlobalConstants.SCREEN_HEIGHT);
+    protected Shape() {
+        canvas = new Canvas(GlobalConstants.SCREEN_WIDTH, GlobalConstants.SCREEN_HEIGHT);
         gContext = canvas.getGraphicsContext2D();
-        holst.getChildren().addAll(canvas);
         gContext.setFill(Color.RED);
         color = Color.RED;
     }
@@ -26,7 +24,7 @@ public class Shape implements DrawObject {
         gContext.setFill(this.color);
     }
 
-    protected void setIntensity(double k) {
+    private void setIntensity(double k) {
         try {
             gContext.setFill(new Color(color.getRed(),
                     color.getGreen(),
@@ -38,7 +36,7 @@ public class Shape implements DrawObject {
     }
 
     public void putOnGroup(Group group) {
-        group.getChildren().addAll(holst);
+        group.getChildren().addAll(canvas);
     }
 
     protected void drawPixel(double x, double y) {
@@ -49,5 +47,13 @@ public class Shape implements DrawObject {
         setIntensity(c);
         gContext.fillRect(x, y, PX_SIZE, PX_SIZE);
         setIntensity(1);
+    }
+
+    public void setTranslateX(double x){
+        canvas.setTranslateX(x);
+    }
+
+    public void setTranslateY(double y){
+        canvas.setTranslateY(y);
     }
 }

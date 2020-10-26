@@ -9,7 +9,7 @@ public class CircleBresenham extends Circle {
     }
 
     @Override
-    public void drawCircle() {
+    public void draw() {
         int x = 0;
         int y = (int)r;
         int delta = 1 - 2 * (int)r;

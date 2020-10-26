@@ -1,8 +1,9 @@
 package vsu.cg.tasks.engine.baseFigures.circle;
 
+import vsu.cg.tasks.engine.baseFigures.Drawer;
 import vsu.cg.tasks.engine.baseFigures.Shape;
 
-public class Circle  extends Shape implements CircleDrawer {
+public class Circle  extends Shape implements Drawer {
     protected double x1;
     protected double y1;
     protected double r;
@@ -18,7 +19,7 @@ public class Circle  extends Shape implements CircleDrawer {
     }
 
     @Override
-    public void drawCircle() {
+    public void draw() {
         int x = 0;
         int y = (int)r;
         int delta = 1 - 2 * (int)r;

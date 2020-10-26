@@ -8,7 +8,7 @@ public class ArchBresenham extends Arch {
     }
 
     @Override
-    public void drawArch() {
+    public void draw() {
         int x = 0;
         int y = (int) h;
         int aSqr = (int) (l * l);

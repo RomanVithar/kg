@@ -9,7 +9,7 @@ public class LineDDA extends Line {
     }
 
     @Override
-    public void drawLine() {
+    public void draw() {
         double xStart = Math.round(x1);
         double yStart = Math.round(y1);
         double xEnd = Math.round(x2);

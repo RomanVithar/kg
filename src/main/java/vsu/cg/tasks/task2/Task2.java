@@ -7,13 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import sun.java2d.loops.FillRect;
 import vsu.cg.tasks.engine.baseFigures.arch.Arch;
 import vsu.cg.tasks.engine.baseFigures.arch.arch_extends.ArchBresenham;
 import vsu.cg.tasks.engine.baseFigures.circle.Circle;
 import vsu.cg.tasks.engine.baseFigures.circle.circle_extends.CircleBresenham;
 import vsu.cg.tasks.engine.baseFigures.circle.circle_extends.CirclePie;
-import vsu.cg.tasks.engine.baseFigures.circle.circle_extends.CircleWu;
 import vsu.cg.tasks.engine.baseFigures.ellipse.Ellipse;
 import vsu.cg.tasks.engine.baseFigures.ellipse.ellipse_extends.EllipseBresenham;
 import vsu.cg.tasks.engine.baseFigures.ellipse.ellipse_extends.FillEllipse;
@@ -54,15 +52,15 @@ public class Task2 extends Application {
         sectors.add(5);
         circlePie.setListPie(sectors);
 
-        circlePie.drawCircle();
+        circlePie.draw();
         fillEllipse.setColor(Color.DARKGOLDENROD);
-        fillEllipse.drawEllipse();
+        fillEllipse.draw();
         arch.setColor(Color.CORNSILK);
-        arch.drawArch();
+        arch.draw();
         ellipse.setColor(Color.CHARTREUSE);
-        ellipse.drawEllipse();
-        circle.drawCircle();
-        line.drawLine();
+        ellipse.draw();
+        circle.draw();
+        line.draw();
         line.setColor(Color.ALICEBLUE);
 
         circlePie.putOnGroup(root);
@@ -85,7 +83,7 @@ public class Task2 extends Application {
                 y2 = mouseEvent.getY();
                 line.setY2(y2);
                 line.setX2(x2);
-                line.drawLine();
+                line.draw();
             }
         });
     }

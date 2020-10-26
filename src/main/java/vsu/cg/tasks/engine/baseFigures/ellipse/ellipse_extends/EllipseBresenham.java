@@ -8,7 +8,7 @@ public class EllipseBresenham extends Ellipse {
     }
 
     @Override
-    public void drawEllipse() {
+    public void draw() {
         int x = 0;
         int y = (int) b;
         int aSqr = (int) (a * a);

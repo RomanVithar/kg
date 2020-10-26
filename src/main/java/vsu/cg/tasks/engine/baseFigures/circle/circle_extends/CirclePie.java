@@ -16,7 +16,7 @@ public class CirclePie extends Circle {
     }
 
     @Override
-    public void drawCircle() {
+    public void draw() {
         fillListAngle();
         Iterator<Double> iterator = listAngle.iterator();
         Double angle = iterator.next();

@@ -8,7 +8,7 @@ public class LineWu extends Line {
     }
 
     @Override
-    public void drawLine() {
+    public void draw() {
         double dx, dy, gradient, intery;
         dx = x2 - x1;
         dy = y2 - y1;

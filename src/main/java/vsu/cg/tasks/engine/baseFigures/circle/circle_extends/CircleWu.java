@@ -8,7 +8,7 @@ public class CircleWu extends Circle {
     }
 
     @Override
-    public void drawCircle() {
+    public void draw() {
         int x = 0;
         int y = (int) r;
         int delta = PX_SIZE - 2 * (int) r;
