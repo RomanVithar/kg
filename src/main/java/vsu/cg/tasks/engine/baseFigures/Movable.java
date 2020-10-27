@@ -1,5 +1,5 @@
 package vsu.cg.tasks.engine.baseFigures;
 
-public interface Drawer {
+public interface Movable {
     void draw();
 }

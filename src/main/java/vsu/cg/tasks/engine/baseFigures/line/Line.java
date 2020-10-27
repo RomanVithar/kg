@@ -1,23 +1,21 @@
 package vsu.cg.tasks.engine.baseFigures.line;
 
-import vsu.cg.tasks.engine.baseFigures.Drawer;
+import javafx.scene.Group;
+import vsu.cg.tasks.engine.baseFigures.Movable;
 import vsu.cg.tasks.engine.baseFigures.Shape;
 
-public class Line extends Shape implements Drawer {
+public class Line extends Shape {
     protected double x1;
     protected double x2;
     protected double y1;
     protected double y2;
 
-    public Line(double x1, double y1, double x2, double y2) {
+    public Line(Group parentGroup, double x1, double y1, double x2, double y2) {
+        super(parentGroup);
         this.x1 = x1;
         this.x2 = x2;
         this.y1 = y1;
         this.y2 = y2;
-    }
-
-    public Line() {
-        this(0, 0, 0, 0);
     }
 
     @Override
@@ -26,7 +24,7 @@ public class Line extends Shape implements Drawer {
         deltax = (int) Math.abs(x2 - x1);
         deltay = (int) Math.abs(y2 - y1);
         error = 0;
-        if(x2 <x1){
+        if (x2 < x1) {
             double mem = x2;
             x2 = x1;
             x1 = mem;
@@ -44,7 +42,7 @@ public class Line extends Shape implements Drawer {
             if (diry < 0) {
                 diry = -PX_SIZE;
             }
-            for (double x0 = x1; x0 < x2; x0+= PX_SIZE) {
+            for (double x0 = x1; x0 < x2; x0 += PX_SIZE) {
                 drawPixel(x0, y);
                 error = error + deltaerr;
                 if (error >= (deltax + 1)) {
@@ -62,8 +60,8 @@ public class Line extends Shape implements Drawer {
             if (dirx < 0) {
                 dirx = -PX_SIZE;
             }
-            if(y2<y1){
-                for (double y0 = y1; y0 > y2; y0-= PX_SIZE) {
+            if (y2 < y1) {
+                for (double y0 = y1; y0 > y2; y0 -= PX_SIZE) {
                     drawPixel(x, y0);
                     error = error + deltaerr;
                     if (error >= (deltay + 1)) {
@@ -71,8 +69,8 @@ public class Line extends Shape implements Drawer {
                         error -= (deltay + 1);
                     }
                 }
-            }else {
-                for (double y0 = y1; y0 < y2; y0+= PX_SIZE) {
+            } else {
+                for (double y0 = y1; y0 < y2; y0 += PX_SIZE) {
                     drawPixel(x, y0);
                     error = error + deltaerr;
                     if (error >= (deltay + 1)) {

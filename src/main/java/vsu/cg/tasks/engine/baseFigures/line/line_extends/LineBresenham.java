@@ -1,11 +1,12 @@
 package vsu.cg.tasks.engine.baseFigures.line.line_extends;
 
+import javafx.scene.Group;
 import vsu.cg.tasks.engine.baseFigures.line.Line;
 
 public class LineBresenham extends Line {
 
-    public LineBresenham(double x1, double y1, double x2, double y2) {
-        super(x1, y1, x2, y2);
+    public LineBresenham(Group parentGroup, double x1, double y1, double x2, double y2) {
+        super(parentGroup,x1, y1, x2, y2);
     }
 
     @Override

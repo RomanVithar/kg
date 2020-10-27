@@ -1,5 +1,6 @@
 package vsu.cg.tasks.engine.baseFigures.circle.circle_extends;
 
+import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import vsu.cg.tasks.engine.baseFigures.circle.Circle;
 
@@ -10,8 +11,8 @@ public class CirclePie extends Circle {
     private List<Double> listAngle;
     private Deque<Color> palette;
 
-    public CirclePie(double x1, double y1, double r) {
-        super(x1, y1, r);
+    public CirclePie(Group parentGroup, double x1, double y1, double r) {
+        super(parentGroup, x1, y1, r);
         fillPalette();
     }
 
@@ -21,20 +22,20 @@ public class CirclePie extends Circle {
         Iterator<Double> iterator = listAngle.iterator();
         Double angle = iterator.next();
         setColor(getNextColor());
-        for (double dAngle = Math.PI/2; dAngle < 2.5 * Math.PI; dAngle += Math.PI/180) {
-            if(dAngle>angle+Math.PI/2){
-                if(iterator.hasNext()) {
+        for (double dAngle = Math.PI / 2; dAngle < 2.5 * Math.PI; dAngle += Math.PI / 180) {
+            if (dAngle > angle + Math.PI / 2) {
+                if (iterator.hasNext()) {
                     angle = iterator.next();
-                }else{
+                } else {
                     iterator = listAngle.iterator();
-                    angle = iterator.next()+2*Math.PI;
+                    angle = iterator.next() + 2 * Math.PI;
                 }
                 setColor(getNextColor());
             }
-            for (double dr = 0; dr <= r; dr+=PX_SIZE) {
-                for(int i=-2;i<2;i++){
-                    for(int j=-2;j<2;j++){
-                        drawPixel(x1+Math.cos(dAngle)*dr+i,y1-Math.sin(dAngle)*dr+j);
+            for (double dr = 0; dr <= r; dr += PX_SIZE) {
+                for (int i = -2; i < 2; i++) {
+                    for (int j = -2; j < 2; j++) {
+                        drawPixel(x1 + Math.cos(dAngle) * dr + i, y1 - Math.sin(dAngle) * dr + j);
                     }
                 }
             }
@@ -67,10 +68,10 @@ public class CirclePie extends Circle {
             sumPieKoef += pie;
         }
         listAngle = new ArrayList<>();
-        double angleBefore =0;
+        double angleBefore = 0;
         for (Integer pie : listPie) {
-            listAngle.add(angleBefore+(pie / sumPieKoef) * 2 * Math.PI);
-            angleBefore+=(pie / sumPieKoef) * 2 * Math.PI;
+            listAngle.add(angleBefore + (pie / sumPieKoef) * 2 * Math.PI);
+            angleBefore += (pie / sumPieKoef) * 2 * Math.PI;
         }
     }
 

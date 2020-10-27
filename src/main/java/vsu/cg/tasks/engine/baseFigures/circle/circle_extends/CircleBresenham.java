@@ -1,11 +1,12 @@
 package vsu.cg.tasks.engine.baseFigures.circle.circle_extends;
 
+import javafx.scene.Group;
 import vsu.cg.tasks.engine.baseFigures.circle.Circle;
 
 public class CircleBresenham extends Circle {
 
-    public CircleBresenham(double x1, double y1, double r) {
-        super(x1, y1, r);
+    public CircleBresenham(Group parentGroup, double x1, double y1, double r) {
+        super(parentGroup,x1, y1, r);
     }
 
     @Override

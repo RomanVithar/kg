@@ -1,10 +1,11 @@
 package vsu.cg.tasks.engine.baseFigures.line.line_extends;
 
+import javafx.scene.Group;
 import vsu.cg.tasks.engine.baseFigures.line.Line;
 
 public class LineWu extends Line {
-    public LineWu(double x1, double y1, double x2, double y2) {
-        super(x1, y1, x2, y2);
+    public LineWu(Group parentGroup, double x1, double y1, double x2, double y2) {
+        super(parentGroup, x1, y1, x2, y2);
     }
 
     @Override
@@ -21,7 +22,7 @@ public class LineWu extends Line {
                 y2 = y1;
                 y1 = mem;
             }
-            gradient =dy / dx * PX_SIZE;
+            gradient = dy / dx * PX_SIZE;
             intery = y1 + gradient;
             for (double x = x1; x < x2; x += PX_SIZE) {
                 drawPixel(x, (int) intery, 1 - (intery % 1));

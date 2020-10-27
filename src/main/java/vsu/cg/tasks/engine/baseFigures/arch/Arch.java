@@ -1,23 +1,24 @@
 package vsu.cg.tasks.engine.baseFigures.arch;
 
-import vsu.cg.tasks.engine.baseFigures.Drawer;
+import javafx.scene.Group;
 import vsu.cg.tasks.engine.baseFigures.Shape;
 
-public class Arch extends Shape implements Drawer {
+public class Arch extends Shape {
     protected double x1;
     protected double y1;
     protected double l;
     protected double h;
 
-    public Arch() {
-        this(0, 0, 0, 0);
-    }
-
-    public Arch(double x1, double y1, double l, double h) {
+    public Arch(Group parentGroup, double x1, double y1, double l, double h) {
+        super(parentGroup);
         this.x1 = x1;
         this.y1 = y1;
         this.l = l;
         this.h = h;
+    }
+
+    public Arch(Group parentGroup) {
+        this(parentGroup, 0, 0, 0, 0);
     }
 
     @Override

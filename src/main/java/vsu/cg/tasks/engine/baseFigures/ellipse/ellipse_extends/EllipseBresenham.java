@@ -1,10 +1,11 @@
 package vsu.cg.tasks.engine.baseFigures.ellipse.ellipse_extends;
 
+import javafx.scene.Group;
 import vsu.cg.tasks.engine.baseFigures.ellipse.Ellipse;
 
 public class EllipseBresenham extends Ellipse {
-    public EllipseBresenham(double x1, double y1, double a, double b) {
-        super(x1, y1, a, b);
+    public EllipseBresenham(Group parentGroup, double x1, double y1, double a, double b) {
+        super(parentGroup, x1, y1, a, b);
     }
 
     @Override

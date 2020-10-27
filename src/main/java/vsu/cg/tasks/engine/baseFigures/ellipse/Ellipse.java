@@ -1,23 +1,26 @@
 package vsu.cg.tasks.engine.baseFigures.ellipse;
 
-import vsu.cg.tasks.engine.baseFigures.Drawer;
+import javafx.scene.Group;
 import vsu.cg.tasks.engine.baseFigures.Shape;
 
-public class Ellipse extends Shape implements Drawer {
+public class Ellipse extends Shape {
     protected double x1;
     protected double y1;
     protected double a;
     protected double b;
 
-    public Ellipse() {
-        this(0, 0, 0, 0);
-    }
 
-    public Ellipse(double x1, double y1, double a, double b) {
+    public Ellipse(Group parentGroup, double x1, double y1, double a, double b) {
+        super(parentGroup);
         this.x1 = x1;
         this.y1 = y1;
         this.a = a;
         this.b = b;
+    }
+
+
+    public Ellipse(Group parentGroup) {
+        this(parentGroup, 0, 0, 0, 0);
     }
 
     public void draw() {
