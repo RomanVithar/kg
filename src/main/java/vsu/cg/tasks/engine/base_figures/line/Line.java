@@ -1,8 +1,7 @@
-package vsu.cg.tasks.engine.baseFigures.line;
+package vsu.cg.tasks.engine.base_figures.line;
 
 import javafx.scene.Group;
-import vsu.cg.tasks.engine.baseFigures.Movable;
-import vsu.cg.tasks.engine.baseFigures.Shape;
+import vsu.cg.tasks.engine.base_figures.Shape;
 
 public class Line extends Shape {
     protected double x1;

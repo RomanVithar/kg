@@ -1,27 +1,31 @@
 package vsu.cg.tasks.services;
 
 import javafx.scene.input.KeyCode;
-import vsu.cg.tasks.engine.baseFigures.circle.Circle;
-import vsu.cg.tasks.engine.decart.Axes;
+import vsu.cg.tasks.engine.base_figures.Shape;
+
+import java.util.List;
 
 public class InputHandler {
-    public void camera(KeyCode key, Axes axes) {
+
+    public void camera(KeyCode key, List<Shape> shapeList) {
         int dy = 0;
         int dx = 0;
         if (key == KeyCode.UP) {
-            dy += 10;
+            dy += GlobalConstants.CAMERA_SPEED;
         }
         if (key == KeyCode.DOWN) {
-            dy -= 10;
+            dy -= GlobalConstants.CAMERA_SPEED;
         }
         if (key == KeyCode.LEFT) {
-            dx += 10;
+            dx += GlobalConstants.CAMERA_SPEED;
         }
         if (key == KeyCode.RIGHT) {
-            dx -= 10;
+            dx -= GlobalConstants.CAMERA_SPEED;
         }
         if (dx + dy != 0) {
-            axes.move(dx, dy);
+            for(Shape shape: shapeList) {
+                shape.move(dx, dy);
+            }
         }
     }
 }

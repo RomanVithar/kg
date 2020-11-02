@@ -1,14 +1,28 @@
-package vsu.cg.tasks.engine.baseFigures.ellipse.ellipse_extends;
+package vsu.cg.tasks.engine.base_figures.ellipse;
 
 import javafx.scene.Group;
-import vsu.cg.tasks.engine.baseFigures.ellipse.Ellipse;
+import vsu.cg.tasks.engine.base_figures.Shape;
 
-public class EllipseBresenham extends Ellipse {
-    public EllipseBresenham(Group parentGroup, double x1, double y1, double a, double b) {
-        super(parentGroup, x1, y1, a, b);
+public class Ellipse extends Shape {
+    protected double x1;
+    protected double y1;
+    protected double a;
+    protected double b;
+
+
+    public Ellipse(Group parentGroup, double x1, double y1, double a, double b) {
+        super(parentGroup);
+        this.x1 = x1;
+        this.y1 = y1;
+        this.a = a;
+        this.b = b;
     }
 
-    @Override
+
+    public Ellipse(Group parentGroup) {
+        this(parentGroup, 0, 0, 0, 0);
+    }
+
     public void draw() {
         int x = 0;
         int y = (int) b;
@@ -44,5 +58,37 @@ public class EllipseBresenham extends Ellipse {
                 x++;
             }
         }
+    }
+
+    public double getX1() {
+        return x1;
+    }
+
+    public void setX1(double x1) {
+        this.x1 = x1;
+    }
+
+    public double getY1() {
+        return y1;
+    }
+
+    public void setY1(double y1) {
+        this.y1 = y1;
+    }
+
+    public double getA() {
+        return a;
+    }
+
+    public void setA(double a) {
+        this.a = a;
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public void setB(double b) {
+        this.b = b;
     }
 }

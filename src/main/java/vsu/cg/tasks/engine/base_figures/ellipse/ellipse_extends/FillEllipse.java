@@ -1,7 +1,7 @@
-package vsu.cg.tasks.engine.baseFigures.ellipse.ellipse_extends;
+package vsu.cg.tasks.engine.base_figures.ellipse.ellipse_extends;
 
 import javafx.scene.Group;
-import vsu.cg.tasks.engine.baseFigures.ellipse.Ellipse;
+import vsu.cg.tasks.engine.base_figures.ellipse.Ellipse;
 
 public class FillEllipse extends Ellipse {
     public FillEllipse(Group parentGroup, double x1, double y1, double a, double b) {

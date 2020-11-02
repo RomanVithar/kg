@@ -1,7 +1,7 @@
-package vsu.cg.tasks.engine.baseFigures.circle;
+package vsu.cg.tasks.engine.base_figures.circle;
 
 import javafx.scene.Group;
-import vsu.cg.tasks.engine.baseFigures.Shape;
+import vsu.cg.tasks.engine.base_figures.Shape;
 
 public class Circle extends Shape {
     protected double x1;

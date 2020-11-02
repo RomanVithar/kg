@@ -1,7 +1,7 @@
-package vsu.cg.tasks.engine.baseFigures.line.line_extends;
+package vsu.cg.tasks.engine.base_figures.line.line_extends;
 
 import javafx.scene.Group;
-import vsu.cg.tasks.engine.baseFigures.line.Line;
+import vsu.cg.tasks.engine.base_figures.line.Line;
 
 public class LineBresenham extends Line {
 

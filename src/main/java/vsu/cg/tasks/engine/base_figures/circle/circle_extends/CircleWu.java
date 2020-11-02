@@ -1,7 +1,7 @@
-package vsu.cg.tasks.engine.baseFigures.circle.circle_extends;
+package vsu.cg.tasks.engine.base_figures.circle.circle_extends;
 
 import javafx.scene.Group;
-import vsu.cg.tasks.engine.baseFigures.circle.Circle;
+import vsu.cg.tasks.engine.base_figures.circle.Circle;
 
 public class CircleWu extends Circle {
     public CircleWu(Group parentGroup, double x1, double y1, double r) {
@@ -15,7 +15,6 @@ public class CircleWu extends Circle {
         int delta = PX_SIZE - 2 * (int) r;
         int error = 0;
         while (y >= 0) {
-            System.out.println(delta / (2 * r) % 1);
             drawPixel(x1 + x, y1 + y, (delta / (2 * r)) % 1);
             drawPixel(x1 + x, y1 - y, (delta / (2 * r)) % 1);
             drawPixel(x1 - x, y1 + y, (delta / (2 * r)) % 1);

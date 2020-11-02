@@ -1,7 +1,7 @@
-package vsu.cg.tasks.engine.baseFigures.line.line_extends;
+package vsu.cg.tasks.engine.base_figures.line.line_extends;
 
 import javafx.scene.Group;
-import vsu.cg.tasks.engine.baseFigures.line.Line;
+import vsu.cg.tasks.engine.base_figures.line.Line;
 
 public class LineWu extends Line {
     public LineWu(Group parentGroup, double x1, double y1, double x2, double y2) {

@@ -1,4 +1,4 @@
-package vsu.cg.tasks.engine.baseFigures;
+package vsu.cg.tasks.engine.base_figures;
 
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
@@ -6,8 +6,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import vsu.cg.tasks.services.GlobalConstants;
 
-public class Shape implements Movable {
-    private Group parentGroup;
+public class Shape implements Draw {
+    protected Group parentGroup;
     private GraphicsContext gContext;
     private Color color;
     private Canvas canvas;
@@ -49,7 +49,10 @@ public class Shape implements Movable {
     }
 
     protected void drawPixel(double x, double y) {
-        gContext.fillRect(x + positionX, y + positionY, PX_SIZE, PX_SIZE);
+        // к пикселю добавляются добавочные координаты посиции фигуры(для перемещения)
+        // и добавляются координаты центра экрана т.к. центр оси в центре эерана
+        gContext.fillRect(x + positionX + GlobalConstants.SCREEN_WIDTH/2,
+                positionY + GlobalConstants.SCREEN_HEIGHT/2 - y, PX_SIZE, PX_SIZE);
     }
 
     protected void drawPixel(double x, double y, double c) {

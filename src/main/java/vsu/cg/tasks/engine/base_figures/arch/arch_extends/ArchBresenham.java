@@ -1,7 +1,7 @@
-package vsu.cg.tasks.engine.baseFigures.arch.arch_extends;
+package vsu.cg.tasks.engine.base_figures.arch.arch_extends;
 
 import javafx.scene.Group;
-import vsu.cg.tasks.engine.baseFigures.arch.Arch;
+import vsu.cg.tasks.engine.base_figures.arch.Arch;
 
 public class ArchBresenham extends Arch {
     public ArchBresenham(Group parentGroup, double x1, double y1, double l, double h) {

@@ -1,7 +1,7 @@
-package vsu.cg.tasks.engine.baseFigures.arch;
+package vsu.cg.tasks.engine.base_figures.arch;
 
 import javafx.scene.Group;
-import vsu.cg.tasks.engine.baseFigures.Shape;
+import vsu.cg.tasks.engine.base_figures.Shape;
 
 public class Arch extends Shape {
     protected double x1;

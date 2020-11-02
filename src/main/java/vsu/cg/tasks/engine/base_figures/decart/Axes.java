@@ -1,8 +1,8 @@
-package vsu.cg.tasks.engine.decart;
+package vsu.cg.tasks.engine.base_figures.decart;
 
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
-import vsu.cg.tasks.engine.baseFigures.Shape;
+import vsu.cg.tasks.engine.base_figures.Shape;
 import vsu.cg.tasks.services.GlobalConstants;
 
 public class Axes extends Shape {
@@ -29,6 +29,6 @@ public class Axes extends Shape {
 
     @Override
     protected void drawPixel(double x, double y) {
-        super.drawPixel(x-positionX, y-positionY);
+        super.drawPixel(x-positionX-GlobalConstants.SCREEN_WIDTH/2, positionY+GlobalConstants.SCREEN_HEIGHT/2-y);
     }
 }

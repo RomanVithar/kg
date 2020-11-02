@@ -1,7 +1,7 @@
-package vsu.cg.tasks.engine.baseFigures.circle.circle_extends;
+package vsu.cg.tasks.engine.base_figures.circle.circle_extends;
 
 import javafx.scene.Group;
-import vsu.cg.tasks.engine.baseFigures.circle.Circle;
+import vsu.cg.tasks.engine.base_figures.circle.Circle;
 
 public class CircleBresenham extends Circle {
 
