@@ -8,12 +8,11 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import vsu.cg.tasks.engine.base_figures.Shape;
 import vsu.cg.tasks.engine.base_figures.circle.Circle;
-import vsu.cg.tasks.engine.base_figures.line.Line;
 import vsu.cg.tasks.engine.base_figures.decart.Axes;
+import vsu.cg.tasks.engine.base_figures.line.Line;
 import vsu.cg.tasks.services.GlobalConstants;
 import vsu.cg.tasks.services.InputHandler;
 
@@ -40,8 +39,8 @@ public class Task3 extends Application {
     public void start(Stage primaryStage) {
         Axes axes = new Axes(root);
         shapeList.add(axes);
-        Line line = new Line(root,10,10,100,100);
-        Circle circle = new Circle(root, 300,200,50);
+        Line line = new Line(root, 10, 10, 100, 100);
+        Circle circle = new Circle(root, 300, 200, 50);
         shapeList.add(line);
         shapeList.add(circle);
         axes.draw();
@@ -62,11 +61,11 @@ public class Task3 extends Application {
     }
 
     private void update() {
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>(){
+        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 KeyCode key = event.getCode();
-                inputHandler.camera(key,shapeList);
+                inputHandler.camera(key, shapeList);
             }
         });
     }

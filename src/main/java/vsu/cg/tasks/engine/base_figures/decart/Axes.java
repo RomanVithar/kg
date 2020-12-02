@@ -19,6 +19,17 @@ public class Axes extends Shape {
                 drawPixel(GlobalConstants.SCREEN_WIDTH / 2 + positionX + 1, i);
             }
         }
+        for (int i = 0; i < 10; i++) {
+            drawPixel(GlobalConstants.SCREEN_WIDTH / 2 + positionX + i*0.6, i);
+            drawPixel(GlobalConstants.SCREEN_WIDTH / 2 + positionX + i*0.6+1, i);
+            drawPixel(GlobalConstants.SCREEN_WIDTH / 2 + positionX - i*0.6+1, i);
+            drawPixel(GlobalConstants.SCREEN_WIDTH / 2 + positionX - i*0.6, i);
+
+            drawPixel(GlobalConstants.SCREEN_WIDTH - i,GlobalConstants.SCREEN_HEIGHT / 2 + positionY + i*0.6);
+            drawPixel(GlobalConstants.SCREEN_WIDTH - i,GlobalConstants.SCREEN_HEIGHT / 2 + positionY + i*0.6+1);
+            drawPixel(GlobalConstants.SCREEN_WIDTH - i,GlobalConstants.SCREEN_HEIGHT / 2 + positionY - i*0.6+1);
+            drawPixel(GlobalConstants.SCREEN_WIDTH - i,GlobalConstants.SCREEN_HEIGHT / 2 + positionY - i*0.6);
+        }
         if (Math.abs(positionY) < GlobalConstants.SCREEN_HEIGHT / 2) {
             for (int i = 0; i < GlobalConstants.SCREEN_WIDTH; i++) {
                 drawPixel(i, GlobalConstants.SCREEN_HEIGHT / 2 + positionY);
@@ -29,6 +40,6 @@ public class Axes extends Shape {
 
     @Override
     protected void drawPixel(double x, double y) {
-        super.drawPixel(x-positionX-GlobalConstants.SCREEN_WIDTH/2, positionY+GlobalConstants.SCREEN_HEIGHT/2-y);
+        super.drawPixel(x - positionX - GlobalConstants.SCREEN_WIDTH / 2, positionY + GlobalConstants.SCREEN_HEIGHT / 2 - y);
     }
 }
