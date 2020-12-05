@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import vsu.cg.tasks.engine.base_figures.Shape;
 import vsu.cg.tasks.engine.base_figures.circle.Circle;
 import vsu.cg.tasks.engine.base_figures.decart.Axes;
+import vsu.cg.tasks.engine.base_figures.kurve.KurveBezier;
 import vsu.cg.tasks.engine.base_figures.line.Line;
 import vsu.cg.tasks.services.GlobalConstants;
 import vsu.cg.tasks.services.InputHandler;
@@ -39,13 +40,28 @@ public class Task3 extends Application {
     public void start(Stage primaryStage) {
         Axes axes = new Axes(root);
         shapeList.add(axes);
-        Line line = new Line(root, 10, 10, 100, 100);
+//        Line line = new Line(root, 10, 10, 100, 100);
         Circle circle = new Circle(root, 300, 200, 50);
-        shapeList.add(line);
+//        shapeList.add(line);
         shapeList.add(circle);
         axes.draw();
-        line.draw();
+//        line.draw();
         circle.draw();
+
+        KurveBezier kurveBezier = new KurveBezier(root);
+        kurveBezier.addPoint(100,100);
+        kurveBezier.addPoint(100,300);
+        KurveBezier kurveBezier2 = new KurveBezier(root);
+        kurveBezier2.addPoint(100,300);
+        kurveBezier2.addPoint(200,300);
+        kurveBezier2.addPoint(200,200);
+        kurveBezier2.addPoint(100,200);
+
+
+        shapeList.add(kurveBezier);
+        shapeList.add(kurveBezier2);
+        kurveBezier.draw();
+        kurveBezier2.draw();
 
         AnimationTimer timer = new AnimationTimer() {
             @Override

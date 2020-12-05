@@ -3,19 +3,17 @@ package vsu.cg.tasks.engine.build_on_figures.string;
 import javafx.scene.Group;
 import vsu.cg.tasks.engine.base_figures.Draw;
 import vsu.cg.tasks.engine.base_figures.Shape;
+import vsu.cg.tasks.engine.build_on_figures.BuildFigures;
 
 import java.util.List;
 
-public class StringDrawer implements Draw {
-    private Group parentGroup;
-    private List<Shape> shapeList;
+public class StringDrawer extends BuildFigures {
     private String string;
     private double x0;
     private double y0;
 
     public StringDrawer(Group parentGroup, List<Shape> shapeList, String string, double x0, double y0) {
-        this.parentGroup = parentGroup;
-        this.shapeList = shapeList;
+        super(parentGroup, shapeList);
         this.string = string;
         this.x0 = x0;
         this.y0 = y0;
@@ -23,6 +21,7 @@ public class StringDrawer implements Draw {
 
     @Override
     public void draw() {
+
     }
 
     public String getString() {
