@@ -14,6 +14,7 @@ public class Shape implements Draw {
     protected final int PX_SIZE = 1;
     protected double positionX;
     protected double positionY;
+    protected boolean isMarkRec;
 
     protected Shape(Group parentScene) {
         initGroup();
@@ -21,6 +22,8 @@ public class Shape implements Draw {
         parentScene.getChildren().addAll(canvas);
         positionX = 0;
         positionY = 0;
+        isMarkRec = false;
+        color = Color.RED;
     }
 
     public void draw() {
@@ -55,6 +58,14 @@ public class Shape implements Draw {
                 positionY + GlobalConstants.SCREEN_HEIGHT/2 - y, PX_SIZE, PX_SIZE);
     }
 
+    public double getPositionY() {
+        return positionY;
+    }
+
+    public void setPositionY(double positionY) {
+        this.positionY = positionY;
+    }
+
     protected void drawPixel(double x, double y, double c) {
         setIntensity(c);
         drawPixel(x, y);
@@ -72,6 +83,25 @@ public class Shape implements Draw {
         canvas = new Canvas(GlobalConstants.SCREEN_WIDTH, GlobalConstants.SCREEN_HEIGHT);
         gContext = canvas.getGraphicsContext2D();
         gContext.setFill(Color.RED);
-        color = Color.RED;
+    }
+
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "parentGroup=" + parentGroup +
+                ", gContext=" + gContext +
+                ", color=" + color +
+                ", canvas=" + canvas +
+                ", PX_SIZE=" + PX_SIZE +
+                ", positionX=" + positionX +
+                ", positionY=" + positionY +
+                '}';
+    }
+    public boolean isMarkRec(){
+        return isMarkRec;
+    }
+
+    public void setMarkRec(boolean markRec) {
+        isMarkRec = markRec;
     }
 }
