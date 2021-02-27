@@ -10,7 +10,7 @@ public class Shape implements Draw {
     protected Group parentGroup;
     private GraphicsContext gContext;
     private Color color;
-    private Canvas canvas;
+    protected Canvas canvas;
     protected final int PX_SIZE = 1;
     protected double positionX;
     protected double positionY;
@@ -79,7 +79,7 @@ public class Shape implements Draw {
         draw();
     }
 
-    private void initGroup() {
+    protected void initGroup() {
         canvas = new Canvas(GlobalConstants.SCREEN_WIDTH, GlobalConstants.SCREEN_HEIGHT);
         gContext = canvas.getGraphicsContext2D();
         gContext.setFill(Color.RED);

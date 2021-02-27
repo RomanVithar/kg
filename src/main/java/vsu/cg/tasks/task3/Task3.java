@@ -62,8 +62,8 @@ public class Task3 extends Application {
         scene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                if(isClicked){
-                    Rectangle rectangle = new Rectangle(root, x1, (int)mouseEvent.getX(),y1,(int)mouseEvent.getY());
+                if (isClicked) {
+                    Rectangle rectangle = new Rectangle(root, x1, (int) mouseEvent.getX(), y1, (int) mouseEvent.getY());
                     isClicked = false;
                     x1 = null;
                     y1 = null;
@@ -72,9 +72,9 @@ public class Task3 extends Application {
                     rectangles.add(rectangle);
                     rectangle.draw();
                     task();
-                }else{
-                    x1 = (int)mouseEvent.getX();
-                    y1 = (int)mouseEvent.getY();
+                } else {
+                    x1 = (int) mouseEvent.getX();
+                    y1 = (int) mouseEvent.getY();
                     isClicked = true;
                 }
             }
@@ -99,29 +99,42 @@ public class Task3 extends Application {
         Application.launch(Task3.class, args);
     }
 
-    private void task(){
+    private void task() {
+        System.out.println(shapeList);
+        System.out.println("====================");
         //inputHandler.render(shapeList);
-        update();
-        if(rectangles.size()<2){
-            return;
-        }
-//        for(Shape shape:shapeList){
-//            if(shape.isMarkRec()){
-//                shape.clear();
-//                shapeList.remove(shape);
-//                rectangles.remove(shape);
+        rectangles.removeIf(Shape::isMarkRec);
+//        for(int i=0;i<rectangles.size();i++){
+//            if(rectangles.get(i).isMarkRec()){
+//                rectangles.get(i).clearMark();
+//                rectangles.remove(rectangles.get(i));
 //            }
 //        }
+//        for(int i=0;i<shapeList.size();i++){
+//            if(shapeList.get(i).isMarkRec()){
+//                //shapeList.get(i).clear();
+//                shapeList.remove(shapeList.get(i));
+//            }
+//        }
+//        shapeList.removeIf(Shape::isMarkRec);
+        if (rectangles.size() < 2) {
+            return;
+        }
         Rectangle rectangle = rectangles.get(0);
-        for(int i=1;i<rectangles.size();i++){
-            if(rectangle.getIntersection(rectangles.get(i))!=null) {
-                rectangle = rectangle.getIntersection(rectangles.get(i));
+        boolean wasIntersection = false;
+        for (int i = 1; i < rectangles.size(); i++) {
+            if (rectangle.getIntersection(rectangles.get(i), root) != null) {
+                wasIntersection = true;
+                rectangle = rectangle.getIntersection(rectangles.get(i),root);
             }
         }
-        rectangle.setColor(Color.YELLOW);
-        rectangle.setMarkRec(true);
-        shapeList.add(rectangle);
-        rectangle.draw();
+        if (wasIntersection) {
+            rectangle.setColor(Color.YELLOW);
+            rectangle.setMarkRec(true);
+            shapeList.add(rectangle);
+            rectangles.add(rectangle);
+            rectangle.draw();
+        }
     }
 }
 
