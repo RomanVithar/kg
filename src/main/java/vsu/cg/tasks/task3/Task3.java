@@ -96,27 +96,22 @@ public class Task3 extends Application {
         Application.launch(Task3.class, args);
     }
 
+    // алгоритм выделения пересечения прямоугольников
+    // использует rectangle.getIntersection который определяет прямоугольник на пересечении двух прямоугольников
     private void task() {
         // удаляет из списка прямоугольников(для расчёта прямоугольника пересечений)
         // прямоугольник который уже был отмечен но теперь не должен быть
-        //rectangles.removeIf(Shape::isMarkRec);
-        //inputHandler.render(shapeList);
-
-        //shapeList.removeIf(Shape::isMarkRec);
-        for(int i=0;i<rectangles.size();i++){
-            if(rectangles.get(i).isMarkRec()){
-                rectangles.get(i).setColor(Color.RED);
-                rectangles.remove(rectangles.get(i));
-            }
-        }
+        // удаление ненужных прямоугольников из rectangles
+        rectangles.removeIf(Shape::isMarkRec);
+        // удаление ненужных прямоугольников из shapeList
         for(int i=0;i<shapeList.size();i++){
             if(shapeList.get(i).isMarkRec()){
                 shapeList.get(i).clear();
-                shapeList.get(i).setColor(Color.RED);
                 shapeList.remove(shapeList.get(i));
             }
+            shapeList.get(i).move(0,0);
         }
-//        shapeList.removeIf(Shape::isMarkRec);
+        // если есть хоть 2 прямоугольника, чтобы был смысл в этом действии
         if (rectangles.size() < 2) {
             return;
         }

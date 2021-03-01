@@ -1,6 +1,7 @@
 package vsu.cg.tasks.engine.base_figures.rectangle;
 
 import javafx.scene.Group;
+import javafx.scene.paint.Color;
 import vsu.cg.tasks.engine.base_figures.Shape;
 import vsu.cg.tasks.services.GlobalConstants;
 
@@ -13,6 +14,7 @@ public class Rectangle extends Shape {
 
     protected Rectangle(Group parentScene) {
         super(parentScene);
+        setColor(Color.RED);
     }
 
     public void setPosition(double positionX, double positionY){
@@ -34,7 +36,7 @@ public class Rectangle extends Shape {
             this.y2 = y1;
             this.y1 = y2;
         }
-
+        setColor(Color.RED);
     }
 
     @Override

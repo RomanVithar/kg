@@ -5,6 +5,9 @@ import javafx.scene.paint.Color;
 import vsu.cg.tasks.engine.base_figures.Shape;
 import vsu.cg.tasks.services.GlobalConstants;
 
+// класс который не сильно отличается от rectangle, просто он рисует оси а не прямоугольник
+// также здесь особый drawPixel для того чтобы оси не двигались дальше чем на пол экрана и была
+// иллюзия, что они бесконечные
 public class Axes extends Shape {
     public Axes(Group parentGroup) {
         super(parentGroup);

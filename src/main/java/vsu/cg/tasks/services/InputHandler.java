@@ -5,6 +5,7 @@ import vsu.cg.tasks.engine.base_figures.Shape;
 
 import java.util.List;
 
+// обработчик в для перемещения по экрану
 public class InputHandler {
 
     public void camera(KeyCode key, List<Shape> shapeList) {

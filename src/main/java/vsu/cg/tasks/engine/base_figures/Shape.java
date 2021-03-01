@@ -82,7 +82,7 @@ public class Shape implements Draw {
     protected void initGroup() {
         canvas = new Canvas(GlobalConstants.SCREEN_WIDTH, GlobalConstants.SCREEN_HEIGHT);
         gContext = canvas.getGraphicsContext2D();
-        gContext.setFill(Color.RED);
+        gContext.setFill(color);
     }
 
     @Override
