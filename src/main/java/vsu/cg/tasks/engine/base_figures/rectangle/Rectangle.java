@@ -11,12 +11,6 @@ public class Rectangle extends Shape {
     private int y1;
     private int y2;
 
-
-    protected Rectangle(Group parentScene) {
-        super(parentScene);
-        setColor(Color.RED);
-    }
-
     public void setPosition(double positionX, double positionY){
         this.positionY = positionY;
         this.positionX = positionX;
@@ -39,6 +33,7 @@ public class Rectangle extends Shape {
         setColor(Color.RED);
     }
 
+    // отрисовка прямоугольников
     @Override
     public void draw() {
         super.draw();
@@ -51,7 +46,7 @@ public class Rectangle extends Shape {
             drawPixel(x, y1);
             drawPixel(x, y2);
         }
-        if (y2 < y1) {
+        if (y2< y1) {
             int temp = y1;
             y1 = y2;
             y2 = temp;
@@ -88,7 +83,6 @@ public class Rectangle extends Shape {
                 );
 
                 rectangleNew.setPosition(this.positionX,this.positionY);
-                System.out.println(rectangleNew);
                 return rectangleNew;
             }
         }
@@ -103,31 +97,11 @@ public class Rectangle extends Shape {
     }
 
     public int ty1(){
-        System.out.println((int)(positionY + GlobalConstants.SCREEN_HEIGHT/2 - y1));
         return (int)(positionY + GlobalConstants.SCREEN_HEIGHT/2 - y1);
     }
 
     public int ty2(){
-        System.out.println((int)(positionY + GlobalConstants.SCREEN_HEIGHT/2 - y2));
         return (int)(positionY + GlobalConstants.SCREEN_HEIGHT/2 - y2);
-
     }
-
-    public int getX1() {
-        return x1;
-    }
-
-    public int getX2() {
-        return x2;
-    }
-
-    public int getY1() {
-        return y1;
-    }
-
-    public int getY2() {
-        return y2;
-    }
-
 
 }

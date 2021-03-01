@@ -48,6 +48,7 @@ public class Task3 extends Application {
         shapeList.add(axes);
         axes.draw();
 
+        // основной цикл программы
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -56,6 +57,7 @@ public class Task3 extends Application {
         };
         timer.start();
 
+        // событие на 2 клика для создания прямоугольника
         scene.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -82,6 +84,7 @@ public class Task3 extends Application {
         primaryStage.show();
     }
 
+    //реагирует на перемещение
     private void update() {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
