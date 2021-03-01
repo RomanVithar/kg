@@ -97,22 +97,25 @@ public class Task3 extends Application {
     }
 
     private void task() {
-        System.out.println(shapeList);
-        System.out.println("====================");
+        // удаляет из списка прямоугольников(для расчёта прямоугольника пересечений)
+        // прямоугольник который уже был отмечен но теперь не должен быть
+        //rectangles.removeIf(Shape::isMarkRec);
         //inputHandler.render(shapeList);
-        rectangles.removeIf(Shape::isMarkRec);
-//        for(int i=0;i<rectangles.size();i++){
-//            if(rectangles.get(i).isMarkRec()){
-//                rectangles.get(i).clearMark();
-//                rectangles.remove(rectangles.get(i));
-//            }
-//        }
-//        for(int i=0;i<shapeList.size();i++){
-//            if(shapeList.get(i).isMarkRec()){
-//                //shapeList.get(i).clear();
-//                shapeList.remove(shapeList.get(i));
-//            }
-//        }
+
+        //shapeList.removeIf(Shape::isMarkRec);
+        for(int i=0;i<rectangles.size();i++){
+            if(rectangles.get(i).isMarkRec()){
+                rectangles.get(i).setColor(Color.RED);
+                rectangles.remove(rectangles.get(i));
+            }
+        }
+        for(int i=0;i<shapeList.size();i++){
+            if(shapeList.get(i).isMarkRec()){
+                shapeList.get(i).clear();
+                shapeList.get(i).setColor(Color.RED);
+                shapeList.remove(shapeList.get(i));
+            }
+        }
 //        shapeList.removeIf(Shape::isMarkRec);
         if (rectangles.size() < 2) {
             return;
